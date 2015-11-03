@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TwitterApiForm")]
+[assembly: AssemblyTitle("Avatar")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TwitterApiForm")]
+[assembly: AssemblyProduct("Avatar")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("43fa94b0-5f51-4fe0-b9d0-cc4cb2bf334a")]
+[assembly: Guid("652241e4-b000-440d-9c56-fa20a69f0959")]
 
 // Version information for an assembly consists of the following four values:
 //
