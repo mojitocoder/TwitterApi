@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tweetinvi;
 using Tweetinvi.Core.Credentials;
 using Tweetinvi.Core.Enum;
+using Tweetinvi.Core.Events.EventArguments;
 using Tweetinvi.Core.Interfaces.Streaminvi.Parameters;
 
 namespace Streaming
@@ -45,12 +47,24 @@ namespace Streaming
             stream.FilterLevel = StreamFilterLevel.None;
             stream.StallWarnings = true;
 
-            stream.TweetReceived += (sender, arguments) =>
+            //stream.TweetReceived += (sender, arguments) =>
+            //{
+            //    Console.WriteLine(arguments.Tweet);
+            //};
+
+            Observable.FromEventPattern<TweetReceivedEventArgs>(stream, "TweetReceived").Subscribe(foo =>
             {
-                Console.WriteLine(arguments.Tweet);
-            };
+                var tweet = foo.EventArgs.Tweet;
+
+                Console.WriteLine(tweet.CreatedBy);
+            });
+
             stream.StartStream();
 
+            //Observable.Interval(TimeSpan.FromSeconds(1)).Subscribe((x) =>
+            //{
+            //    Console.WriteLine("Tick");
+            //});
 
 
 
